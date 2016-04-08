@@ -4,7 +4,7 @@
 
 # Points to the root of Google Test. Change it to reflect where your
 # clone of the googletest repo is
-GTEST_DIR = /usr/local/include/gtest
+GTEST_DIR = /usr/local/include/googletest/googletest
 
 # Flags passed to the preprocessor and compiler
 CPPFLAGS += --coverage -isystem $(GTEST_DIR)/include -std=c++11
@@ -24,6 +24,8 @@ all : $(TESTS)
 clean :
 	rm -f $(TESTS) gtest.a gtest_main.a *.o *.gcov *.gcda *.gcno
 
+test :
+	./ConnectXTest
 
 # Builds gtest.a and gtest_main.a.
 GTEST_SRCS_ = $(GTEST_DIR)/src/*.cc $(GTEST_DIR)/src/*.h $(GTEST_HEADERS)
